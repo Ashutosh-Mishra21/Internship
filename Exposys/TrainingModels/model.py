@@ -19,20 +19,7 @@ data.describe()
 correlation_matrix = data.corr()
 print("\nCorrelation Matrix:")
 print(correlation_matrix)
-# Define formulas
-formulas = [
-    "Profit ~ Administration",
-    "Profit ~ Marketing_Spend + Administration",
-    "Profit ~ Marketing_Spend + Administration + Q('R&D_Spend')"
-]
 
-# Fit models and print summaries
-for i, formula in enumerate(formulas, start=1):
-    model = sm.OLS.from_formula(formula, data=data)
-    fit = model.fit()
-    print(f"Model {i} Summary:")
-    print(fit.summary())
-    print("\n")
 # Create a figure and axis objects
 fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 
